@@ -8,7 +8,7 @@ function lineBreaks (str, is_xhtml) {
 function insertTemplate () {
 
     //Get the stored variables we created on the click event in popup.js
-    chrome.storage.local.get(['emailSubject', 'emailBody'], function (result) {
+    chrome.storage.sync.get(['emailSubject', 'emailBody'], function (result) {
         var emailSubject = result.emailSubject;
         var emailBodyRaw = result.emailBody;
         var emailBody = lineBreaks(emailBodyRaw, false);

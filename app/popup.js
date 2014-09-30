@@ -3,11 +3,15 @@
 //Function to get the email template data from the Google Spreadsheet
 function getJson () {
 	//Get the saved Spreadsheet JSONified URL.
-	chrome.storage.local.get('savedUrl', function (result) {
+	chrome.storage.sync.get('savedUrl', function (result) {
         var jsonUrl = result.savedUrl;
    		
         //Send ajax call to get spreadsheet data
 		$.getJSON(jsonUrl, function(data) {
+			//Display Spreadsheet title in spreadSheet title ID div 
+			var spreadsheetTitle = 'Retrieved from: <span class="spreadsheetTitleSpan">' + data.feed.title.$t + '</span>';
+			$('#spreadsheetTitle').html(spreadsheetTitle);
+			console.log(spreadsheetTitle);
 
 			//Prepare Templates HTML variable. We will build the template data and then evetually display this.
 			var templatesHTML = '';
@@ -42,8 +46,8 @@ function sendTemplate () {
 		var templateSubject = $(this).parent().next().text();
 		var templateBody = $(this).parent().next().next().html();
 
-		//Store these variables in chrome local storage so they can be retrived from content.js. We don't need any callback function here.
-		chrome.storage.local.set({'emailSubject': templateSubject, 'emailBody': templateBody});
+		//Store these variables in chrome storage so they can be retrived from content.js. We don't need any callback function here.
+		chrome.storage.sync.set({'emailSubject': templateSubject, 'emailBody': templateBody});
 
 		//Once everything is ready to go, we execute jquery and then content.js script.
 		chrome.tabs.executeScript(null, {file: 'jquery-2.1.1.min.js'}, function(){

@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Gmail Templates Options</title>
+    <title>Gmail Templates from Google Spreadsheets</title>
     <style>
       body {
         min-width: 450px;
@@ -9,12 +9,18 @@
       }
       h1 {
         font-size: 20px;
-        border-bottom: 1px solid #ccc;
+        margin: 0 0 2px 0;
+
+      }
+      #spreadsheetTitle {
+        font-size: 10px;
+        border-bottom: 1px dotted #999;
+        color: #888;
       }
       .templateTitle {
         font-size: 13px;
         margin: 5px 0px 0px 0px;
-      }
+      }    
 
       .templateDescription {
         font-size: 12px;
@@ -53,6 +59,10 @@
   </head>
   <body>
     <h1>Gmail Templates </h1>
+    <div id="spreadsheetTitle">
+      <!-- This is where the title of the email template spreadsheet is inserted by popup.js -->
+    </div>
+
     <div id="templatesList">
 
       <!-- This is where the list of email templates is inserted by popup.js -->

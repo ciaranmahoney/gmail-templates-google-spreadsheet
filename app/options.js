@@ -8,7 +8,7 @@ function save_options() {
 	var jsonUrl = "https://spreadsheets.google.com/feeds/list/" + spreadsheetUrl.match(/[-\w]{25,}/) + "/od6/public/values?alt=json-in-script&callback=?";
 
 	//Now we store that json url in chrome storage
-	chrome.storage.local.set( {"savedUrl": jsonUrl}, function() {
+	chrome.storage.sync.set( {"savedUrl": jsonUrl}, function() {
 		//This posts a temporary message to confirm options saved
 		var status = document.getElementById('status');
 		status.textContent = "URL Saved";
@@ -20,7 +20,7 @@ function save_options() {
 
 //Restore options from chrome storage
 function restore_options() {
-	chrome.storage.local.get({
+	chrome.storage.sync.get({
 		savedUrl:'Not set'
 	}, function(items){
 		document.getElementById('spreadsheetUrl').value = items.savedUrl;
