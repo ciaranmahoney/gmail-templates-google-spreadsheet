@@ -3,9 +3,11 @@
   
   "name": "Gmail Templates from Google Spreadsheets",
 
+  "short_name": "Gmail Templates - Google Spreadsheets",
+
   "description": "This extension allows you to insert email templates into Gmail, using templates stored in a Google Spreadsheet.",
 
-  "version": "0.1",
+  "version": "0.11",
 
   "author": "Ciaran Mahoney - @ciaransm",
 
