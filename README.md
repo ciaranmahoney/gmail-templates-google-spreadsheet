@@ -4,7 +4,7 @@ This extension allows you to insert email templates into Gmail, using templates 
 
 ## Getting Started
 
-1. Drag .crx file into your Chrome Extensions `chrome://extensions/`
+1. Download extension from the [Chrome Store](https://chrome.google.com/webstore/detail/gmail-templates-from-goog/mebjlcgpjmcklcpncmomjkgiekaffldf?hl=en&gl=US&authuser=1).
 2. Create a Google Spreadsheet with four columns. The headers must be: `title | description | subject | body`. Then create your templates.
 3. Publish your spreadsheet. **THIS DOCUMENT IS NOW PUBLICLY AVAILABLE (FOR PERSONAL ACCOUNTS).** If you want to restrict to just your organization (available for business users only), check the `Require viewers to sign in with their ..... account.` box.
 4. Copy the full url of the Google Spreadsheet into the url field on the Options page. The url may look something like: `https://docs.google.com/a/<your-company-if-business-user>/spreadsheets/d/<some-big-long-random-mix-of-letters>/edit#gid=0`
